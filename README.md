@@ -120,6 +120,36 @@ interface ColumnDef {
 3. It uses `react-window` to render only the visible rows.
 4. It uses absolute positioning to render merged cells ("Phantom Spacers" are handled internally, so you don't have to worry about flexbox layouts breaking).
 
+## Compatibility & Requirements
+
+⚠️ **Important:** This library is optimized for the stable React ecosystem.
+
+* **React:** v16.8 - v18.x
+* **react-window:** v1.8.x
+
+**Note on React 19:**
+Currently, `react-window` (v1.8.10) does not officially support React 19. If you are using React 19, you may face peer dependency warnings or runtime issues. We recommend staying on React 18 until `react-window` releases a stable update.
+
+**Note on `react-window` v2:**
+This library is built for the stable `react-window` v1.8. It is **not compatible** with the v2 alpha/beta releases (which introduce breaking API changes).
+
+**Recommended Installation:**
+Ensure you install the stable version of the peer dependency:
+
+```bash
+npm install react-window@1.8.10
+```
+
+## Troubleshooting
+
+### `VariableSizeList` is undefined / "Cannot convert undefined or null to object"
+This usually happens if you accidentally installed `react-window` v2+ (which has a different API).
+
+**Fix:** Run `npm install react-window@1.8.10` to downgrade to the stable version.
+
+### Dependency conflict with React 19
+If you see `ERESOLVE` errors during install, it is because the upstream `react-window` package hasn't updated its peer dependencies yet. You can try running with `--legacy-peer-deps`, but stability is not guaranteed.
+
 ## License
 
 MIT © Nilesh Ingale
