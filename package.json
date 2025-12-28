@@ -1,6 +1,6 @@
 {
   "name": "react-virtual-merged-list",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React component for rendering virtualized lists with merged cells/rowspans using react-window.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
